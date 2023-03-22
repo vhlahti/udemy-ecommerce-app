@@ -5,9 +5,7 @@
         <State name="__root__">
           <Node name="udemy-ecommerce-app" expanded="True">
             <Node name="API" expanded="True">
-              <Node name="Properties" expanded="True">
-                <Node name="launchSettings.json" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
