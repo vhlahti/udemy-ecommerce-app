@@ -8,6 +8,10 @@ namespace Core.Specifications
 {
     public class BaseSpecification<T> : ISpecification<T>
     {
+        public BaseSpecification()
+        {
+        }
+
         public BaseSpecification(Expression<Func<T, bool>> criteria)
         {
             Criteria = criteria;
@@ -21,11 +25,6 @@ namespace Core.Specifications
         protected void AddInclude(Expression<Func<T, object>> includeExpression)
         {
             Includes.Add(includeExpression);
-        }
-
-        public BaseSpecification()
-        {
-
         }
     }
 }
