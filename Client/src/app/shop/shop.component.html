@@ -37,17 +37,18 @@
 
             <div class="d-flex justify-content-between align-items-center pb-2">
 
-            <app-paging-header
+                <app-paging-header
                 [totalCount]="totalCount"
                 [pageNumber]="shopParams.pageNumber"
                 [pageSize]="shopParams.pageSize">
-            </app-paging-header>
+                </app-paging-header>
 
-                <div class="form-inline mt-2">
-                    <input type="text" class="form-control" style="width: 200px" placeholder="Search">
-                    <button class="btn btn-outline-primary my-2 me-2">Search</button>
-                    <button class="btn btn-outline-success my-2">Reset</button>
+                <div class="d-flex mt-2">
+                    <input (keyup.enter)="onSearch()" type="text" placeholder="Search" class="form-control me-2" #search>
+                    <button (click)="onSearch()" class="btn btn-outline-primary mx-2">Search</button>
+                    <button (click)="onReset()" class="btn btn-outline-success">Reset</button>
                 </div>
+
             </div>
 
             <div class="row">
