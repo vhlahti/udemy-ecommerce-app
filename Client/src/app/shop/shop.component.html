@@ -3,10 +3,12 @@
 
         <section class="col-3">
             <h5 class="text-warning ml-3">Sort</h5>
-            <select class="custom-select mb-4 mt-1">
-                <option selected>Alphabetical</option>
-                <option>Price: low to high</option>
-                <option>Price: high to low</option>
+            <select class="custom-select mb-4 mt-1"
+            (change)="onSortSelected($event.target.value)">
+                <option *ngFor="let sort of sortOptions"
+                [value]="sort.value">
+                    {{ sort.name }}
+                </option>
             </select>
 
             <h5 class="text-warning ml-3">Brands</h5>
@@ -15,8 +17,7 @@
                     *ngFor="let brand of brands"
                     [class.active]="brand.id === this.brandIdSelected"
                     [value]="brand.id"
-                    (click)="onBrandSelected(brand.id)"
-                    >
+                    (click)="onBrandSelected(brand.id)">
                     {{brand.name}}
                 </li>
             </ul>
@@ -26,8 +27,7 @@
                 *ngFor="let type of types"
                 [class.active]="type.id === this.typeIdSelected"
                     [value]="type.id"
-                    (click)="onTypeSelected(type.id)"
-                >
+                    (click)="onTypeSelected(type.id)">
                     {{type.name}}
                 </li>
             </ul>
