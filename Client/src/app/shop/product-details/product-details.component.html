@@ -1,10 +1,12 @@
+<div class="container mt-5">
+
 <div class="row" *ngIf="product">
     <div class="col-6">
         <img src="{{ product.pictureUrl }}" alt="{{ product.name }}" class="img-fluid w-100">
     </div>
     <div class="col-6">
         <h3>{{ product.name }}</h3>
-        <p>{{ product.price | currency }}</p>
+        <p style="font-size: 1.4em;">{{ product.price | currency }}</p>
         <div class="d-flex justify-content-start align-items-center">
             <fa-icon [icon]="faCircleMinus" size="lg" style="color: orange"></fa-icon>
             <span class="font-weight-bold" style="font-size: 1.3em;">
@@ -20,4 +22,6 @@
             <p>{{ product.description }}</p>
         </div>
     </div>
+</div>
+
 </div>
