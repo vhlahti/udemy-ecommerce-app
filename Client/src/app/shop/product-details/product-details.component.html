@@ -8,12 +8,12 @@
         <h3>{{ product.name }}</h3>
         <p style="font-size: 1.4em;">{{ product.price | currency }}</p>
         <div class="d-flex justify-content-start align-items-center">
-            <fa-icon [icon]="faCircleMinus" size="lg" style="color: orange"></fa-icon>
+            <fa-icon (click)="decrementQuantity()" [icon]="faCircleMinus" size="lg" style="color: orange; cursor: pointer;"></fa-icon>
             <span class="font-weight-bold" style="font-size: 1.3em;">
-                2
+                {{ quantity }}
             </span>
-            <fa-icon [icon]="faCirclePlus" size="lg" style="color: orange"></fa-icon>
-            <button class="btn btn-outline-secondary btn-lg">Add to cart</button>
+            <fa-icon (click)="incrementQuantity()" [icon]="faCirclePlus" size="lg" style="color: orange; cursor: pointer;"></fa-icon>
+            <button (click)="addItemToBasket()" class="btn btn-outline-primary btn-lg ms-4">Add to cart</button>
         </div>
     </div>
     <div class="row mt-5">
