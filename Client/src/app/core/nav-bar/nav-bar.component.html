@@ -12,7 +12,34 @@
             <fa-icon class="me-5 icon-cart" size="xl" [icon]="faCartShopping"></fa-icon>
             <div *ngIf="(basket$ | async) as basket" class="cart-no">{{ basket.items.length }}</div>
         </a>
-        <a href="" class="btn btn-outline-secondary me-2">Login</a>
-        <a href="" class="btn btn-outline-secondary me-3">Sign up</a>
+
+        <ng-container *ngIf="(currentUser$ | async) === null">
+            <a routerLink="/account/login" class="btn btn-outline-secondary me-2">Login</a>
+            <a routerLink="/account/register" class="btn btn-outline-secondary me-3">Sign up</a>
+        </ng-container>
+
+        <ng-container *ngIf="currentUser$ | async">
+            <div ngbDropdown class="d-inline-block" style="cursor: pointer;">
+                <strong><a id="dropdownBasic1" ngbDropdownToggle>
+                    Welcome {{ (currentUser$ | async).displayName }}
+                </a></strong>
+                <div ngbDropdownMenu style="cursor: pointer;">
+                    <a routerLink="/basket" ngbDropdownItem class="d-flex align-items-center py-2">
+                        <fa-icon class="me-3 icon-cart" size="sm" [icon]="faCartShopping"></fa-icon>
+                        View Basket
+                    </a>
+                    <a routerLink="/orders" ngbDropdownItem class="d-flex align-items-center py-2">
+                        <fa-icon class="me-3 icon-cart" size="sm" [icon]="faHistory"></fa-icon>
+                        View Orders
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a (click)="logout()" ngbDropdownItem class="d-flex align-items-center py-2">
+                        <fa-icon class="me-3 icon-cart" size="sm" [icon]="faSignOut"></fa-icon>
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </ng-container>
+
     </div>
 </header>
