@@ -5,7 +5,7 @@ import { PagingHeaderComponent } from './components/paging-header/paging-header.
 import { PagerComponent } from './components/pager/pager.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CdkStepperModule } from '@angular/cdk/stepper';
@@ -26,6 +26,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     NgbPaginationModule,
     NgbCarouselModule,
+    FormsModule,
     ReactiveFormsModule,
     NgbDropdownModule,
     FontAwesomeModule,
@@ -38,6 +39,7 @@ import { RouterModule } from '@angular/router';
     PagerComponent,
     NgbCarouselModule,
     OrderTotalsComponent,
+    FormsModule,
     ReactiveFormsModule,
     NgbDropdownModule,
     TextInputComponent,
